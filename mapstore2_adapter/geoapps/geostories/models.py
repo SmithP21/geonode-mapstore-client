@@ -24,8 +24,8 @@ from django.conf import settings
 from django.db.models import signals
 from django.utils.translation import ugettext_lazy as _
 
-from geonode.geoapps.models import GeoApp
-from geonode.base.models import resourcebase_post_save
+from mygeonode.geoapps.models import GeoApp
+from mygeonode.base.models import resourcebase_post_save
 
 logger = logging.getLogger(__name__)
 

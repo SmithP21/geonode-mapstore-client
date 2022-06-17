@@ -14,8 +14,8 @@ try:
 except ImportError:
     from django.utils import simplejson as json
 
-from geonode.client.hooksets import BaseHookSet
-from mapstore2_adapter.plugins.geonode import GeoNodeMapStore2ConfigConverter
+from mygeonode.client.hooksets import BaseHookSet
+from mapstore2_adapter.plugins.mygeonode import GeoNodeMapStore2ConfigConverter
 
 ms2_config_converter = GeoNodeMapStore2ConfigConverter()
 

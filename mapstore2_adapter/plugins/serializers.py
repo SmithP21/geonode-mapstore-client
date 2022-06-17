@@ -25,13 +25,13 @@ try:
     from urllib.parse import urlparse, parse_qs
 except ImportError:
     from urlparse import urlparse, parse_qs
-from geonode.layers.models import Layer
-from geonode.base.bbox_utils import BBOXHelper
+from mygeonode.layers.models import Layer
+from mygeonode.base.bbox_utils import BBOXHelper
 
 is_analytics_enabled = False
 try:
-    from geonode.monitoring.models import EventType
-    from geonode.base import register_event
+    from mygeonode.monitoring.models import EventType
+    from mygeonode.base import register_event
     is_analytics_enabled = True
 except ImportError:
     pass
@@ -75,7 +75,7 @@ class GeoNodeSerializer(object):
         for _q in queryset:
             mapid = _q.id
             try:
-                from geonode.maps.views import (_resolve_map,
+                from mygeonode.maps.views import (_resolve_map,
                                                 _PERMISSION_MSG_VIEW)
                 map_obj = _resolve_map(
                     caller.request,
@@ -92,9 +92,9 @@ class GeoNodeSerializer(object):
         return queryset
 
     def get_geonode_map(self, caller, serializer):
-        from geonode.maps.views import _PERMISSION_MSG_SAVE
+        from mygeonode.maps.views import _PERMISSION_MSG_SAVE
         try:
-            from geonode.maps.views import _resolve_map
+            from mygeonode.maps.views import _resolve_map
             if 'id' in serializer.validated_data:
                 mapid = serializer.validated_data['id']
                 map_obj = _resolve_map(
@@ -147,7 +147,7 @@ class GeoNodeSerializer(object):
                     "title": _map_title,
                     "abstract": _map_abstract}
                 _map_conf['sources'] = {}
-                from geonode.layers.views import layer_detail
+                from mygeonode.layers.views import layer_detail
                 _map_obj = data.pop('map', None)
                 if _map_obj:
                     _map_bbox = []
@@ -214,7 +214,7 @@ class GeoNodeSerializer(object):
                                         if len(_map_bbox) == 0:
                                             _map_bbox = [x0, x1, y0, y1]
                                         else:
-                                            from geonode.utils import bbox_to_wkt
+                                            from mygeonode.utils import bbox_to_wkt
                                             from django.contrib.gis.geos import GEOSGeometry
 
                                             _l_wkt = bbox_to_wkt(x0, x1, y0, y1,
@@ -245,7 +245,7 @@ class GeoNodeSerializer(object):
                             _map_obj['bbox'] = [_map_bbox[0], _map_bbox[1],
                                                 _map_bbox[2], _map_bbox[3]]
                         # Create a new GeoNode Map
-                        from geonode.maps.models import Map
+                        from mygeonode.maps.models import Map
                         map_obj = Map(
                             title=_map_title,
                             owner=caller.request.user,

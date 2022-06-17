@@ -18,7 +18,7 @@
 #
 #########################################################################
 from django.utils.translation import ugettext_noop as _
-from geonode.geoapps import GeoNodeAppsConfig
+from mygeonode.geoapps import GeoNodeAppsConfig
 
 
 class GeoStoryAppsConfig(GeoNodeAppsConfig):

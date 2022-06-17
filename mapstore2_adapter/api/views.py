@@ -15,7 +15,7 @@ from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly  # noqa
 from oauth2_provider.contrib.rest_framework import OAuth2Authentication
-from geonode.base.api.permissions import IsOwnerOrReadOnly
+from mygeonode.base.api.permissions import IsOwnerOrReadOnly
 
 from .models import MapStoreResource
 from .serializers import (UserSerializer,

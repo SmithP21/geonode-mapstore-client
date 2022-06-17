@@ -27,8 +27,8 @@ from rest_framework.serializers import ValidationError
 from dynamic_rest.serializers import DynamicModelSerializer
 from dynamic_rest.fields.fields import DynamicRelationField
 
-from geonode.geoapps.models import GeoAppData
-from geonode.base.api.serializers import ResourceBaseSerializer
+from mygeonode.geoapps.models import GeoAppData
+from mygeonode.base.api.serializers import ResourceBaseSerializer
 
 from mapstore2_adapter.geoapps.utils import update_geoapp_thumbnail
 

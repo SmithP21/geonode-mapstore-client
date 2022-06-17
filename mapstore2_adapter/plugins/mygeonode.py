@@ -185,7 +185,7 @@ class GeoNodeMapStore2ConfigConverter(BaseMapStore2ConfigConverter):
 
                 try:
                     # - extract from GeoNode guardian
-                    from geonode.layers.views import (_resolve_layer,
+                    from mygeonode.layers.views import (_resolve_layer,
                                                       _PERMISSION_MSG_MODIFY,
                                                       _PERMISSION_MSG_DELETE)
                     if _resolve_layer(request,
@@ -219,7 +219,7 @@ class GeoNodeMapStore2ConfigConverter(BaseMapStore2ConfigConverter):
                 }
                 try:
                     # - extract from GeoNode guardian
-                    from geonode.maps.views import (_resolve_map,
+                    from mygeonode.maps.views import (_resolve_map,
                                                     _PERMISSION_MSG_SAVE,
                                                     _PERMISSION_MSG_DELETE)
                     if _resolve_map(request,
@@ -409,7 +409,7 @@ class GeoNodeMapStore2ConfigConverter(BaseMapStore2ConfigConverter):
                             overlay['nativeCrs'] = layer['nativeCrs']
                         else:
                             try:
-                                from geonode.layers.models import Layer
+                                from mygeonode.layers.models import Layer
                                 _gn_layer = Layer.objects.get(
                                     store=overlay['store'],
                                     alternate=overlay['name'])

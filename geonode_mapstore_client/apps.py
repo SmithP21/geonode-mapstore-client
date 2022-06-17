@@ -14,7 +14,7 @@ from django.apps import apps
 
 
 def run_setup_hooks(*args, **kwargs):
-    from geonode.urls import urlpatterns
+    from mygeonode.urls import urlpatterns
     from django.conf.urls import url, include
 
     urlpatterns += [

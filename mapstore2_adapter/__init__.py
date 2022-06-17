@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 def fixup_map(map_id):
     """ ------------------------------------- Maps Fix """
-    from geonode.maps.models import Map
+    from mygeonode.maps.models import Map
     from django.contrib.auth import get_user_model
     from mapstore2_adapter.api.models import MapStoreResource
     for _m in Map.objects.filter(id=map_id):

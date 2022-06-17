@@ -69,8 +69,8 @@ class MapLayersJSONArraySerializerField(serializers.Field):
 
     def to_representation(self, value):
         if value:
-            from geonode.maps.models import Map
-            from geonode.maps.api.serializers import MapLayerSerializer
+            from mygeonode.maps.models import Map
+            from mygeonode.maps.api.serializers import MapLayerSerializer
             map = Map.objects.get(id=value)
             return MapLayerSerializer(embed=True, many=True).to_representation(map.layers)
 

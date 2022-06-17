@@ -35,7 +35,7 @@ class GeoStoryPermissionsFilter(BaseFilterBackend):
         # See https://github.com/encode/django-rest-framework/issues/4608
         # (Also see #1624 for why we need to make this import explicitly)
         from guardian.shortcuts import get_objects_for_user
-        from geonode.security.utils import get_visible_resources
+        from mygeonode.security.utils import get_visible_resources
 
         user = request.user
         resources = get_objects_for_user(

@@ -24,9 +24,9 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthentic
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from oauth2_provider.contrib.rest_framework import OAuth2Authentication
 
-from geonode.base.api.filters import DynamicSearchFilter
-from geonode.base.api.permissions import IsOwnerOrReadOnly
-from geonode.base.api.pagination import GeoNodeApiPagination
+from mygeonode.base.api.filters import DynamicSearchFilter
+from mygeonode.base.api.permissions import IsOwnerOrReadOnly
+from mygeonode.base.api.pagination import GeoNodeApiPagination
 
 from mapstore2_adapter.geoapps.geostories.models import GeoStory
 from mapstore2_adapter.geoapps.geostories.api.serializers import GeoStorySerializer

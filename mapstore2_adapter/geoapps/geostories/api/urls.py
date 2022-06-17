@@ -19,7 +19,7 @@
 #########################################################################
 from django.conf.urls import url, include
 
-from geonode.api.urls import router
+from mygeonode.api.urls import router
 
 from mapstore2_adapter.geoapps.geostories.api import views
 
